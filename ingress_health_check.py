@@ -53,11 +53,11 @@ def health(url, method):
         res = requests.request(method=method, url=url, timeout=3)
         if res.status_code != 200:
             raise HTTPError(res.content)
-        RecodeLog.info(msg="发送报警成功,url:{0},返回内容:{1}".format(url, res.content))
+        RecodeLog.info(msg="健康检查成功,url:{0},返回内容:{1}".format(url, res.content))
         sys.exit(0)
     except RequestException as error:
-        RecodeLog.error(msg="发送报警失败,url:{0},返回内容:{1}".format(url, error))
+        RecodeLog.error(msg="健康检查失败,url:{0},返回内容:{1}".format(url, error))
         sys.exit(1)
 
 
-health(url="http://11111/actuator/health", method="get")
+health(url="http://1111111:31110/actuator/health", method="get")
