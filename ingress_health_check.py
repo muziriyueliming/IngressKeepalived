@@ -60,4 +60,4 @@ def health(url, method):
         sys.exit(1)
 
 
-health(url="http://10.253.100.12:31110/actuator/health", method="get")
+health(url="http://11111/actuator/health", method="get")
